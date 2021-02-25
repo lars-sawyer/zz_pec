@@ -1,0 +1,19 @@
+{   
+    "ACTION" : "INIT",
+
+    "inputValue" : "",
+    "inputDescr" : "",
+    "inputPlaceholder" : "",
+
+    "orderValue"  : "",
+    "orderDescr" :  "",
+
+    "focusId" : "input",
+    
+    "appTitle"  : "PEC APP",
+    "buttonText": "123",
+    "warehouse": "001",
+    "workstation": "w002",
+    "init": "X"
+    
+}

@@ -1,0 +1,25 @@
+{   
+    "ACTION" : "SCAN_HU",
+
+    "inputValue": "",
+    "inputDescr": "HANDLING UNIT",
+    "inputPlaceholder": "please scan hu",
+
+    "orderValue": "1232345",
+    "orderDescr": "Order",
+
+    "huValue": "",
+    "huDescr": "",
+
+    "matnrValue": "",
+    "matnrDescr": "",
+ 
+    "focusId" : "input",
+    
+    "appTitle"  : "PEC APP",
+    "buttonText": "123",
+    "warehouse": "001",
+    "workstation": "w002",
+    "init": "X"
+    
+}

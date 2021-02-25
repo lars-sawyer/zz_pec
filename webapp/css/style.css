@@ -1,0 +1,22 @@
+/* Enter your custom styles here */
+.slot {
+/* background-color: greenyellow; */
+border-radius: 25px;
+padding: 10px;
+}
+
+.right {
+    right: 0;
+}
+
+.spacer {
+  width: 100%;
+}
+
+.bottomline {
+    border-bottom: 1px solid #cccccc;
+}
+
+.min {
+    min-width: 300px;
+}

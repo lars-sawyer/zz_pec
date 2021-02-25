@@ -1,0 +1,104 @@
+{
+    "ACTION": "SCAN_ORDER",
+    "inputValue": "",
+    "inputDescr": "ORDER",
+    "inputPlaceholder": "please scan order now",
+    "orderValue": "12248983412",
+    "orderDescr": "",
+    "mhdValue" : "28.08.2021",
+    "matnrValue": "1-23443-23",
+    "matnrValueExt": "Kopfschmerzttablette",
+    "focusId": "input",
+    "appTitle": "PEC APP",
+    "buttonText": "123",
+    "warehouse": "001",
+    "workstation": "w002",
+    "init": "X",
+    "MessageType": "S",
+    "MessageText": "Buchung durchgeführt",
+    "LogNumber": "12235",
+    "viewSettings": {
+        "smallImageSize": "75px",
+        "mediumImageSize": "125px"
+    },
+    "input": {
+        "warehouse": "",
+        "workstation": "",
+        "orderTote": ""
+    },
+    "inputFields": {},
+    "slots": [
+        {
+            "slotNumber": 1,
+            "ActionText": "Versandkarton scannen",
+            "SlotText": "Slot",
+            "SlotValue": "1",
+            "StorageBinText": "Storage Bin",
+            "StorageBinValue": "10-01-C-10",
+            "HUText": "HandlingUnit",
+            "HUValue": "1234567",
+            "BoxText": "Size",
+            "BoxValue": "M",
+            "PrintText": "Print Outs",
+            "PrintValue": "0/1",
+            "ProductText": "Products",
+            "ProductValue": "0/3",
+            "CoolingText": "Cooling",
+            "CoolingValue": "0/1",
+            "LabelText": "VAS",
+            "LabelValue": "cooling / dog / usw",
+            "shippingCarton": "1234567",
+            "storageBin": "10-01-01",
+            "shippingCartonImage": "css/images/cool.jpg",
+            "shippingCartonLabel": "Size 1",
+            "inlays": [],
+            "exceptionCode": "OK",
+            "vas": [],
+            "highlighted": true
+        },
+        {
+            "slotNumber": 2,
+            "shippingCarton": "1234567",
+            "storageBin": "10-01-01",
+            "shippingCartonImage": "/css/images/cool.png",
+            "shippingCartonLabel": "Size 1",
+            "inlays": [
+                {
+                    "path": "/css/images/zyto.png"
+                }
+            ],
+            "exceptionCode": "OK",
+            "vas": [
+                {
+                    "path": "/css/images/zyto.png"
+                },
+                {
+                    "path": "/css/images/tres.png"
+                }
+            ],
+            "highlighted": false
+        },
+         {
+            "slotNumber": 3,
+            "shippingCarton": "1234567",
+            "storageBin": "10-01-01",
+            "shippingCartonImage": "/css/images/cool.png",
+            "shippingCartonLabel": "Size 1",
+            "inlays": [
+                {
+                    "path": "/css/images/zyto.png"
+                }
+            ],
+            "exceptionCode": "OK",
+            "vas": [
+                {
+                    "path": "/css/images/zyto.png"
+                },
+                {
+                    "path": "/css/images/tres.png"
+                }
+            ],
+            "highlighted": false
+        }
+    ]
+}

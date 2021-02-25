@@ -1,0 +1,25 @@
+{   
+    "ACTION" : "SCAN_COOLING",
+
+    "inputValue" : "",
+    "inputDescr" : "COOLING",
+    "inputPlaceholder" : "please scan cooling",
+
+    "orderValue"  : "1233246",
+    "orderDescr" :  "Delivery",
+
+    "huValue" : "123542346",
+    "huDescr" : "handling unit",
+ 
+    "matnrValue" : "F-00001",
+    "matnrDescr" : "material",
+
+    "focusId" : "input",
+    
+    "appTitle"  : "PEC APP",
+    "buttonText": "123",
+    "warehouse": "001",
+    "workstation": "w002",
+    "init": "X"
+    
+}

@@ -1,0 +1,25 @@
+{   
+    "ACTION" : "SCAN_MATNR",
+
+    "inputValue" : "",
+    "inputDescr" : "MATERIAL",
+    "inputPlaceholder" : "please scan matnr",
+
+    "orderValue"  : "1233246",
+    "orderDescr" :  "Delivery",
+
+    "huValue" : "123542346",
+    "huDescr" : "handling unit",
+
+    "matnrValue" : "",
+    "matnrDescr" : "",
+ 
+    "focusId" : "input",
+    
+    "appTitle"  : "PEC APP",
+    "buttonText": "123",
+    "warehouse": "001",
+    "workstation": "w002",
+    "init": "X"
+    
+}

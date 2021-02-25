@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+ 	xmlns="sap.m"
+    xmlns:core="sap.ui.core" 
+	xmlns:t="sap.ui.table"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    >
+	<Dialog id="employeeDialog" title="{list>/title}" contentWidth="100%" contentHeight="100%">
+		<content>
+         	<t:Table
+				rows="{list>/items}"
+				selectionMode="None"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<t:columns>
+					<t:Column width="3rem">
+						<Label text="Typ" />
+					   <t:template>
+                          <core:Icon class="sapUiTinyMarginBeginEnd" color="{list>COLOR}" src="{list>TYPE}" size="20px"/>
+							<!-- Text text="{list>TYPE}" wrapping="false" />  -->
+						</t:template>
+					</t:Column>
+					<t:Column width="20rem">
+						<Label text="Nachricht" />
+						<t:template>
+							<Text text="{list>MESSAGE}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</content>
+		<endButton>
+			<Button text="{list>/buttonText}" press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
