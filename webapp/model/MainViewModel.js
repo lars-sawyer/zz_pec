@@ -79,7 +79,7 @@ sap.ui.define([
                     break;
 
                 case 'SCAN_ORDER':
-                    this.oModel.loadData("model/mockdata/SCAN_HU.json");
+                    this.oModel.loadData("model/mockdata/SCAN_ORDER2.json");
                     break;
 
                 case 'SCAN_HU':

@@ -1,8 +1,8 @@
 /* Enter your custom styles here */
-.slot {
-/* background-color: greenyellow; */
-border-radius: 25px;
-padding: 10px;
+.slotHighlighted {
+background-color: #E0F7E1; 
+border-color: #2b7c2b;
+box-shadow: 0 0 10px #2b7c2b;
 }
 
 .right {

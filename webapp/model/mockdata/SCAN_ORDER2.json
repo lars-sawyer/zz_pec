@@ -1,9 +1,9 @@
 {
     "ACTION": "SCAN_ORDER",
     "workstation" : "1234",
-    "inputValue": "",
+    "inputValue": "1-23443-23",
     "inputDescr": "Produkt scannen",
-    "inputActive" : true,
+    "inputActive" : false,
     "inputPlaceholder": "",
     "orderValue": "12248983412",
     "orderDescr": "",
@@ -59,7 +59,7 @@
         },
           {
             "slotNumber": 2,
-            "ActionText": "",
+            "ActionText": "Produkt platzieren",
             "SlotText": "Slot",
             "SlotValue": "1",
             "StorageBinText": "Storage Bin",
@@ -83,7 +83,7 @@
             "inlays": [],
             "exceptionCode": "OK",
             "vas": [],
-            "highlighted": false
+            "highlighted": true
         },
            {
             "slotNumber": 3,

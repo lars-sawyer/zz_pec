@@ -4,7 +4,7 @@
     xmlns:core="sap.ui.core"
     xmlns:semantic="sap.f.semantic" 
     xmlns:cards="sap.f.cards" 
-    xmlns:dm="de.docmorris.pec.control"
+    xmlns:dm="wmppec.control"
     xmlns:grid="sap.ui.layout.cssgrid" 
     xmlns:f="sap.f"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
@@ -16,19 +16,28 @@
         <App id="app">
             <pages>
           <Page xmlns="sap.m" id="pageId"
-        title="{parts:[ {path:'i18n>workstation.title'}, {path:'/input/workstation'} ], formatter:'jQuery.sap.formatMessage'}"
         floatingFooter="true" class="myTextSize" busy="{viewModel>/busy/global}">
-        <headerContent>
-            <Button xmlns="sap.m" id="buttonLogOut" icon="sap-icon://log" text="{i18n>workstation.button.logOut}"
+        <customHeader>
+           <Bar>
+           <contentLeft>
+            <Title text='' width="500px"></Title>
+           </contentLeft>
+           <contentMiddle>
+           <Title text="Workstation 1234"></Title>
+           </contentMiddle>
+                <contentRight>
+                     <Button xmlns="sap.m" id="buttonLogOut" icon="sap-icon://log" text="{i18n>workstation.button.logOut}"
                 press="onLogoutButtonPressed" busy="{viewModel>/busy/busyLockOut}" />
-        </headerContent>
+                </contentRight>
+           </Bar>
+      </customHeader>
         <content>
             <HBox class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiTinyMarginTop" width="auto"
                 alignContent="Center" alignItems="Center" justifyContent="SpaceBetween" renderType="Bare">
                 <items>
                     <HBox alignContent="Center" alignItems="Center" id="inputContainer">
                         <Title text="{/inputDescr}" wrapping="true" titleStyle="H3" />
-                        <Input id="input" submit="onInit" fieldWidth="300px" value="" width="300px" class="sapUiTinyMarginBegin"
+                        <Input id="input" editable="{/inputActive}" submit="onInit" fieldWidth="300px" value="" width="300px" class="sapUiTinyMarginBegin"
                             placeholder="{/inputPlaceholder}" change="onScannedField" />
                         <Title text="{textAdditionalInfo}" class="sapUiTinyMarginBegin" titleStyle="H3" />
                     </HBox>
@@ -92,55 +101,17 @@
                 </grid:items>
             </grid:CSSGrid>
             <core:HTML content="&lt;hr&gt;" />
-            <HBox items="{/slots}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd" justifyContent="SpaceAround"
-                visible="true" renderType="Bare" alignItems="Center" alignContent="Center">
-                <f:Card width="auto" class="min">
-                    <f:header>
-                    </f:header>
-                    <f:content>
-                        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTopBottom">
-                            <items>
-                                <VBox class="bottomline" alignItems="Center" justifyContent="Center">
-                                 <Title text="{ActionText}" />
-                                <HBox class="sapUiSmallMarginTop" alignItems="Center" justifyContent="SpaceBetween">
-                                 <VBox alignItems="Center" justifyContent="Center">
-                                 <core:Icon class="sapUiTinyMarginBeginEnd"  src="sap-icon://add-product" size="50px"/>
-                                  </VBox>
-                                </HBox>
-                              </VBox>
-                                <HBox class="sapUiSmallMarginTop" alignItems="Center" justifyContent="SpaceBetween">
-                                    <Title text="{i18n>label.slot}" />
-                                    <Text text=" {slotNumber}" />
-                                </HBox>
-                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                                    <Title text="{i18n>label.storageBin}" />
-                                    <Text text=" {storageBin}" />
-                                </HBox>
-                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                                    <Title text="{i18n>label.handlingUnit}" />
-                                    <Text text=" {handlingUnit}" />
-                                </HBox>
-                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                                    <Title text="{i18n>label.shippingCarton}" />
-                                    <Text text="{shippingCartonLabel}" />
-                                </HBox>
-                                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                                    <Title text="{i18n>label.exception}" />
-                                    <Select forceSelection="false" selectedKey="{exceptionCode}">
-                                        <core:Item key="{ProductId}" text="OK" />
-                                    </Select>
-                                </HBox>
-                            </items>
-                        </VBox>
-                    </f:content>
-                </f:Card>
+                     <HBox items="{path: '/slots', factory: '.cardFactory'}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd"
+                justifyContent="SpaceAround" visible="true" renderType="Bare" alignItems="Center" alignContent="Center">
+                <dependents>
+                    <core:Fragment fragmentName="wmppec.view.Card" type="XML" />
+                </dependents>
             </HBox>
-
         </content>
         <footer>
             <OverflowToolbar>
                 <ToolbarSpacer />
-                <Button text="{i18n>workstation.button.finishOrderTote}" press="onFinishOrderToteButtonPressed"
+                <Button text="Order Tote abschließen" press="onFinishOrderToteButtonPressed"
                     type="Emphasized">
                 </Button>
             </OverflowToolbar>
