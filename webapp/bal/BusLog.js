@@ -25,6 +25,10 @@ sap.ui.define([
 
         },
 
+        factoryLog: function( ){
+            return oLog;
+        },
+
         init: function (oView) {
             //  if (!this._oDialog) {
             this._oDialog = sap.ui.xmlfragment("wmppec.bal.Popup", new PopupController(this));
@@ -45,8 +49,25 @@ sap.ui.define([
                 this.oParent = oParent;
             },
 
-            display : function ( ){
-                this.oParent.popup( );
+            display: function () {
+                this.oParent.popup();
+            }
+        },
+
+        oLog: {
+
+            aLog: [],
+
+            add: function (message) {
+
+                this.aLog.push({
+                    "message": message,
+                    "type": "E",
+                    "id": "HUGEN",
+                    "no": "334"
+                }
+                );
+
             }
         },
 

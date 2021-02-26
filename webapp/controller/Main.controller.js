@@ -48,6 +48,9 @@ sap.ui.define([
             onFinishOrderToteButtonPressed: function () {
 
                 this.oAppLogPopup.display('Handling Unit 123458 konnte nicht in Lieferung 234674213 verpackt werden. Bitte Status der Handling Unit prüfen.', '123354');
+
+                var olog = new AppLog().factoryLog();
+                olog.push( 'Es ist ein feehler passiert');
             },
 
 
