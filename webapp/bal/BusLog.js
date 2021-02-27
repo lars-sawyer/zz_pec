@@ -26,7 +26,7 @@ sap.ui.define([
         },
 
         factoryLog: function( ){
-            return oLog;
+            return this.oLog;
         },
 
         init: function (oView) {
@@ -49,8 +49,8 @@ sap.ui.define([
                 this.oParent = oParent;
             },
 
-            display: function () {
-                this.oParent.popup();
+            display: function ( message, lognumber) {
+                this.oParent.popup( message , lognumber );
             }
         },
 

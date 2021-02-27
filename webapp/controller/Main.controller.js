@@ -17,10 +17,36 @@ sap.ui.define([
 
             onInit: function () {
 
-                if (this.oAppLogPopup === false) {
-                    this.oAppLogPopup = new AppLog().factoryPopup(this.getView());
-                }
+                   var oModel = this.getView( ).getModel( "testBackend" );
+                   
+					function fnSuccess(oResponse) {
 
+					var test = 1;
+					//MessageToast.show('Auftrag ' + oResponse.results[0].aufnr + ' ermittelt');
+					//view.byId("__orderid").setValue(oResponse.results[0].aufnr);
+					//that.goToDetail();
+
+				}
+
+				oModel.read("/WorkstationSet", {
+				//	filters: la_filters,
+					success: fnSuccess,
+					error: function(oResponse) {
+						sap.m.MessageBox.error('Kein Auftrag zu Arbeitsplatz gefunden');
+					}
+				});
+
+             var oModel = this.getView( ).getModel( "Decanting" );
+
+             oModel.read("/DefaultParameterSet('LGNUM')", {
+				//	filters: la_filters,
+					success: fnSuccess,
+					error: function(oResponse) {
+						sap.m.MessageBox.error('Kein Auftrag zu Arbeitsplatz gefunden');
+					}
+				});
+
+                this.oAppLogPopup = new AppLog().factoryPopup(this.getView());
                 ViewModel.refresh(this);
 
                 setTimeout(function () {
@@ -50,7 +76,7 @@ sap.ui.define([
                 this.oAppLogPopup.display('Handling Unit 123458 konnte nicht in Lieferung 234674213 verpackt werden. Bitte Status der Handling Unit prüfen.', '123354');
 
                 var olog = new AppLog().factoryLog();
-                olog.push( 'Es ist ein feehler passiert');
+                olog.add( 'Es ist ein feehler passiert');
             },
 
 
