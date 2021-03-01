@@ -11,7 +11,7 @@
          	<t:Table
 				rows="{list>/items}"
 				selectionMode="None"
-				visibleRowCount="7"
+				visibleRowCount="10"
 				paste="onPaste"
 				ariaLabelledBy="title">
 				<t:columns>

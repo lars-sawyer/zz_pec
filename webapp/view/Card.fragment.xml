@@ -23,11 +23,11 @@
                     <Text text=" {storageBin}" />
                 </HBox>
                 <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                    <Title text="{i18n>label.handlingUnit}" />
+                    <Title text="{i18n>label.shippingCarton}" />
                     <Text text=" {handlingUnit}" />
                 </HBox>
                 <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
-                    <Title text="{i18n>label.shippingCarton}" />
+                    <Title text="" />
                     <Text text="{shippingCartonLabel}" />
                 </HBox>
                 <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiSmallMarginTop">

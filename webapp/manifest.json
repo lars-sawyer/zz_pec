@@ -27,6 +27,14 @@
                     "odataVersion": "2.0",
                     "localUri": "localService/metadataDecanting.xml"
                 }
+            },
+            "PECService": {
+                "uri": "/sap/opu/odata/ZRG/IF_PEC_BINDING",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadatai18n.xml"
+                }
             }
         }
     },
@@ -79,6 +87,10 @@
             },
             "Decanting": {
                 "dataSource": "DecantingService",
+                "preload": true
+            },
+            "PecService": {
+                "dataSource": "PECService",
                 "preload": true
             }
         },

@@ -27,8 +27,64 @@ sap.ui.define([
             return this.oModel;
         },
 
-        onAfterLoad: function (oData) {
+        scanTestLoad: function( oResponse ){
 
+
+            var oData = this.oModel.getData();
+            var aRes = oResponse.results;
+  
+            this.oController.oAppLogPopup.display(
+                     aRes[ 1 ].head_message,
+                     aRes[ 1 ].head_lognumber );
+
+            this.oModel.setData(oData);
+
+        },
+
+        scanTest: function( oBackend ){
+
+             var oModel = oBackend;
+
+                oModel.setUseBatch(false);
+
+                var la_filters = new Array();
+                var lo_Filter = new sap.ui.model.Filter(
+                    {
+                     path: "workstation",
+                     operator: sap.ui.model.FilterOperator.EQ,
+                     value1: 'ABCD'
+              },
+                {
+                     path: "scan_action",
+                     operator: sap.ui.model.FilterOperator.EQ,
+                     value1: ''
+              },
+                {
+                     path: "scan_value",
+                     operator: sap.ui.model.FilterOperator.EQ,
+                     value1: 'FIRST_SCAN'
+              }
+              );
+                la_filters.push(lo_Filter);
+          window.zoModel = oModel;
+                oModel.read("/xZRGxCDS_PEC_SCAN_ACTION" , { 
+                    filters  : la_filters,
+                    //	filters: la_filters,
+                    //urlParameters: mParameters,
+                    success: function (oResponse) {
+                        this.scanTestLoad( oResponse );
+                        //sap.m.MessageBox.success('Erfolg');
+                    }.bind(this),
+                    error: function (oResponse) {
+                        sap.m.MessageBox.error('Kein Auftrag zu Arbeitsplatz gefunden');
+                    }
+                });
+
+        },
+
+        onAfterLoad: function (oData , oBackend ) {
+
+            this.oBackend = oBackend;
             var oData = this.oModel.getData();
 
             switch (oData.ACTION) {
@@ -67,7 +123,7 @@ sap.ui.define([
             console.log(this.oModel.getData());
         },
 
-        refresh: function (oController) {
+        refresh: function (oController , oBackend) {
 
             this.oController = oController;
             var oData = this.oModel.getData();
@@ -79,6 +135,7 @@ sap.ui.define([
                     break;
 
                 case 'SCAN_ORDER':
+                    //this.scanTest( oBackend );
                     this.oModel.loadData("model/mockdata/SCAN_ORDER2.json");
                     break;
 

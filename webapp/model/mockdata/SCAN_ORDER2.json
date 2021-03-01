@@ -54,6 +54,7 @@
             "shippingCartonLabel": "Versand Karton Größe 1",
             "inlays": [],
             "exceptionCode": "OK",
+            "handlingUnit" : "1000000001",
             "vas": [],
             "highlighted": false
         },
@@ -74,6 +75,7 @@
             "ProductValue": "0/3",
             "CoolingText": "Cooling",
             "CoolingValue": "0/1",
+            "handlingUnit" : "1000000002",
             "LabelText": "VAS",
             "LabelValue": "cooling / dog / usw",
             "shippingCarton": "1234567",
@@ -101,6 +103,7 @@
             "ProductText": "Products",
             "ProductValue": "0/3",
             "CoolingText": "Cooling",
+            "handlingUnit" : "1000000003",
             "CoolingValue": "0/1",
             "LabelText": "VAS",
             "LabelValue": "cooling / dog / usw",
